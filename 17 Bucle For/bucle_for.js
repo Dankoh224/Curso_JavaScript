@@ -31,7 +31,7 @@ lista.forEach(i => {
     console.log(i);
 })
 
-// 5) También esta a estructura for in. Creo que es solo para objetos.
+// 5) También esta la estructura for in. Creo que es solo para objetos.
 let persona = {
     nombre: "danko",
     edad: 23,
