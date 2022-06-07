@@ -87,16 +87,76 @@ console.log(listaDePrueba);
 console.log(pc1);
 
 // ¿Y si quiero partir por el último elemento? Para eso partiremos en la posición -1: 
+
 console.log(pc1);
-listaDePrueba = pc1.splice(-1,1);
+listaDePrueba = pc1.splice(-1,1,"check","check","check","check","check"); // Aquí parto borrando el último valor y agregando check.
 console.log(listaDePrueba);
 console.log(pc1);
 
-// Accesores
-// - join() - une todos los elementos de una matriz (u objeto similar) en una cadena y la devuelve.
-// - slice() - devuelve una parte del array dentro de un nuevo array empezando por inicio hasta fin (fin no
-// incluido).
+
+// ¿Y si quisiera borrar los últimos 3 valores? Si quiero agregar después de borrar uso los métodos antes descritos.
+console.log(pc1);
+listaDePrueba = pc1.splice(-3,3); // Aquí parto borrando los últimos 3 valores y agregando nada.
+console.log(listaDePrueba);
+console.log(pc1);
+
+// ACCESORES:
+
+// - join() - une todos los elementos de una matriz (u objeto similar) en una cadena y la devuelve. Lo bakan de este metodo, es que puedo decidir unir los elementos de la cadena mediante el carácter que yo decida, usando como argumento ese carácter. Ejemplo:
+
+console.log(pc3);
+let cadenaNueva = pc3.join(" - elemento: ")
+console.log("elemento: ",cadenaNueva);
+
+// - slice() - devuelve una parte del array dentro de un nuevo array empezando por inicio hasta fin (fin no incluido).
+
+console.log(pc1);
+let cadenaNueva2 = pc1.slice(4,6)
+console.log(cadenaNueva2);
+
+// Si quisiera obtener todos los valores desde un inicio hasta el final, puedo usar el valor -1 (obiamente cuenta todos los número exceptuando el último valor):
+
+console.log(pc1);
+let cadenaNueva3 = pc1.slice(2,-1,);
+console.log(cadenaNueva3);
+
 // - Metodos ya vistos en cadenas: tostring(), index0f(), lastIndexof(), includes()
+
+// tostring(): trasnforma una lista a cadena de caracteres o u número a cadena de caracteres:
+let numero = 12;
+    lista = ["perro","gato","canario"]
+let numeroTransformado = numero.toString()
+    listaTransformada = lista.toString()
+console.log(numeroTransformado);
+console.log(listaTransformada);
+console.log(typeof(numeroTransformado));
+console.log(typeof(listaTransformada));
+
+
+
+// includs(): averigua si el argumento (cadena completa) está incluido en la lista.
+
+console.log(pc1.includes("perro"))
+
+// indexOf(): devuelve el índice del elemento que escribamos como argumento. Solo devuelve índice del primer valor que coincida de la lista.
+
+console.log(pc1);
+console.log(pc1.indexOf("check"));
+console.log(pc1.indexOf(23));
+console.log(pc1.indexOf(12));
+console.log(pc1.indexOf("perro"));
+
+// lastIndexOf(): devuelve el índice del elemento que escribamos como argumento. Solo devuelve el índice del ÚLTIMO valor que coincide de la lista.
+
+console.log(pc1);
+console.log(pc1.lastIndexOf("check"));
+console.log(pc1.lastIndexOf(23));
+console.log(pc1.lastIndexOf(12));
+console.log(pc1.lastIndexOf("perro"));
+
+
+
+
 
 // De Repetición 1
 // - filter() - crea un nuevo array con todos los elementos que cumplan la condicij
