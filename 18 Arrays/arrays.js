@@ -6,7 +6,7 @@ let pc2 = {
     nombre: "Dankocore",
     ghz: 2.6,
     gb_en_memoria: 8,
-    modelo: "T490" 
+    modelo: "T490"
 }
 console.log(pc1);
 console.log(pc2);
@@ -68,25 +68,25 @@ console.log(pc1);
 
 // - splice() - cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos. Sus argumentos son (valor desde el que se iniciará el cambio, cantidad de elementos a los que afectará el cambio) Devuelve array con valores eliminados.
 
-// Se elimina desde la posición 1 en adelante, 2 posiciones: 
+// Se elimina desde la posición 1 en adelante, 2 posiciones:
 console.log(pc1);
 listaDePrueba = pc1.splice(1,2);
 console.log(listaDePrueba);
 console.log(pc1);
 
-// Si elimino un grupo de elementos, puedo reemplazar elementos desde la posición 3 en adelante (en este caso), 5 posiciones: 
+// Si elimino un grupo de elementos, puedo reemplazar elementos desde la posición 3 en adelante (en este caso), 5 posiciones:
 console.log(pc1);
 listaDePrueba = pc1.splice(3,5,"perro","gato",23);
 console.log(listaDePrueba);
 console.log(pc1);
 
-// Si no quiero eliminar ningún elemento, desde la posición 1 en adelante (en este caso), 4 posiciones, pero si quiero agregar valores: 
+// Si no quiero eliminar ningún elemento, desde la posición 1 en adelante (en este caso), 4 posiciones, pero si quiero agregar valores:
 console.log(pc1);
 listaDePrueba = pc1.splice(1,0,23,21,100,"check");
 console.log(listaDePrueba);
 console.log(pc1);
 
-// ¿Y si quiero partir por el último elemento? Para eso partiremos en la posición -1: 
+// ¿Y si quiero partir por el último elemento? Para eso partiremos en la posición -1:
 
 console.log(pc1);
 listaDePrueba = pc1.splice(-1,1,"check","check","check","check","check"); // Aquí parto borrando el último valor y agregando check.
@@ -154,13 +154,43 @@ console.log(pc1.lastIndexOf(23));
 console.log(pc1.lastIndexOf(12));
 console.log(pc1.lastIndexOf("perro"));
 
-
-
-
-
 // De Repetición 1
-// - filter() - crea un nuevo array con todos los elementos que cumplan la condicij
-// - forEach() - ejecuta la función indicada una vez por cada elemento del array.
+// - filter() - crea un nuevo array con todos los elementos que CUMPLAN UNA CONDICIÓN.
 
- 
-// 
+console.log(pc1);
+resultado = pc1.filter(numero => numero > 2);
+console.log(resultado);
+
+// Si tenemos un objeto, tb podemos filtrar para obtener el arreglo que indiquemos en la condición. Por ejemplo:
+
+let mascotas = [
+    {nombre: "donko", fecha_de_nacimiento: "12 de enero 2014", animal: "perro"},
+    {nombre: "maria", fecha_de_nacimiento: "13 de junio 2014", animal: "gato"},
+    {nombre: "pelusa", fecha_de_nacimiento: "15 de diciembre 2014", animal: "perro"},
+    {nombre: "stuart", fecha_de_nacimiento: "4 de octubre 2014", animal: "gato"},
+]
+
+// Para mí no es 100% clara la sintaxis, pero para crear este filtro, debemos ingresar en el argumento la variable auxiliar, escribir el simbolo de implica, luego la variable auxiliar acompañada de un punto acompañado del atributo en el que realizaremos el filtro e igualarlo a lo que buscamos filtrar. Nos devolvera en este caso una lista con estos atributos.
+
+perro = mascotas.filter(i => i.animal === "perro")
+console.log(perro)
+
+gato = mascotas.filter(i => i.animal === "gato")
+console.log(gato)
+
+// También puedo filtrar aquellas cadenas que tienen más de cierta cantidad de caracteres:
+
+let mayorDeCinco = mascotas.filter(i => i.nombre.length < 7);
+console.log(mayorDeCinco)
+
+// - forEach() - ejecuta la función indicada una vez por cada elemento del array. El argumento debe ser como se muestra a continuación:
+
+let nombres = ["pedrito","juanito","amareto","diego"]
+nombres.forEach(function(valor,indice,nombres) {
+    console.log(`El nombre ${valor} se encuentra en la posición ${indice}`);
+});
+
+// Si solo quisiera ver el valor, omito los otros argumentos:
+nombres.forEach(function(valor) {
+    console.log(valor);
+})
